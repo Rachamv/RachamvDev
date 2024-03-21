@@ -1,0 +1,703 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700&display=swap");
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+}
+
+:root{
+    --color-primary:#6f6af8;
+    --color-danger:#da0f3f;
+    --color-white:#ffff;
+    --color-light:#ccc;
+    --color-bg:hwb(240 95% 0%);
+    --color-gray-100: hsl(220, 20%, 10% 5%);
+    --color-gray-200: hsl(220, 20%, 10% 10%);
+    --color-gray-300: hsl(220, 20%, 10% 25%);
+    --color-gray-500: hsl(220, 20%, 10% 50%);
+    --color-gray-700: #252542;
+    --color-gray-900: #0c0c22;
+
+    --transition: .3s ease all;
+
+    --border-radius-1: .2rem;
+    --border-radius-2: .4rem;
+    --border-radius-3: .8rem;
+    --border-radius-4: 1.6rem;
+}
+
+html {
+  /* font-family: "Montserrat", sans-serif;
+  font-family: "Open Sans", sans-serif; */
+  font-family: "Poppins", sans-serif;
+}
+
+body{
+    background: var(--color-bg);
+    font-size: 16px;
+    color:var(--color-gray-700);
+}
+
+a{
+    text-decoration:none;
+    color: var(--color-gray-700);
+}
+
+ul li {
+    list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6{
+    color: var(--color-gray-900);
+    line-height: 1.1;
+}
+
+h1{
+    font-size: 2.2rem;
+}
+h2{
+    font-size: 1.9rem;
+}
+
+h3{
+    font-size: 1.3rem;
+    line-height: 1.25;
+}
+h4{
+    font-size: 1.1rem;
+}
+h5{
+    line-height: 1.4;
+}
+
+img{
+    display: block;
+    object-fit: cover;
+    width: 100%;
+}
+
+section{
+    margin-top: 8rem;
+}
+.container{
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1800px;
+}
+.btn{
+    display: inline-block;
+    width: fit-content;
+    padding: .6em 1.2em;
+    border-radius: var(--border-radius-2);
+    background: var(--color-white);
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.btn-primary{
+    background: var(--color-primary);
+    color: var(--color-white);
+}
+.btn-category{
+    background: var(--color-bg);
+    color: var(--color-primary);
+    font-size: .85rem;
+    font-weight: 400;
+}
+
+.btn-sm{
+    font-size: .9rem;
+    padding: .4rem .8rem;
+    font-weight: 500;
+}
+.btn-danger{
+    background: var(--color-danger);
+    color: var(--color-white);
+}
+.btn:hover{
+    background: var(--color-gray-900);
+    color: var(--color-white);
+}
+
+/*...............Start Nav Bar...
+header file
+....Start Nav Bar...............*/
+
+nav {
+    background: var(--color-primary);
+    height: 5rem;
+    display: grid;
+    place-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-bottom: 4px solid var(--color-light);
+    z-index: 100;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.nav-logo h3 {
+    color: var(--color-white);
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+
+.nav-logo h3 span {
+    color: var(--color-light);
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.nav-menu li a {
+    color: var(--color-white);
+    transition: var(--transition);
+}
+
+.nav-menu li a:hover {
+    color: var(--color-light);
+}
+
+.nav-toggle-button {
+    background: transparent;
+    color: var(--color-white);
+    display: block;
+}
+
+.nav-tagline-wrapper {
+    font-size: 1.2rem;
+    font-weight: normal;
+    color: var(--color-white);
+  }
+
+/* ===================Start Home Page================== */
+/* Start Posts Component */
+.authorPosts-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+}
+
+.post-container, .categoryPosts-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+}
+.head-post-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    padding-top: 3rem;
+    align-items: center;
+    margin-bottom: 4rem;
+}
+.head-post-container .post-image{
+    height: fit-content;
+    border: 1rem solid var(--color-white);
+    box-shadow: 0 1.5rem 2rem rgba(0, 0, 0, 0.1);
+}
+.head-post-container .post-image{
+ border-radius: var(--border-radius-3);
+}
+
+.head-post-container h1{
+    margin-bottom: 1.7rem;
+    font-size: 2.4rem;
+    line-height: 1.4;
+}
+.head-post-container p{
+    font-size: 17px;
+    line-height: 1.5;
+}
+.post{
+    background: var(--color-white);
+    padding: 1rem;
+    border-radius: var(--border-radius-4);
+    padding-bottom: 2rem;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.post:hover{
+    box-shadow: 0 1.5rem 2rem rgba(0, 0, 0, 0.1);
+}
+
+.post-image{
+    border-radius: var(--border-radius-3);
+    overflow: hidden;
+    height: 16rem;
+}
+
+.post-image img{
+    height: 100%;
+}
+
+.post-content{
+    margin-top: 1.5rem;
+}
+
+.post-content h3{
+    margin: 1rem 0 0.6rem;
+}
+
+.post-footer{
+    display: flex;
+    align-items: flex-end;
+    margin-top: 2rem;
+    justify-content: space-between;
+}
+
+.post-author{
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+}
+
+.post-author-image {
+    width: 2.8rem;
+    border-radius: 50%;
+    overflow: hidden;
+    aspect-ratio: 1/1;
+    border: 4px solid var(--color-light);
+}
+.page-title{
+    text-align: center;
+    margin: 4rem auto;
+}
+
+/* End Posts Component */
+/* ===================End Home Page====================*/
+
+/* ...................Start PostDetails................. */
+
+.postDetail-container{
+    width: 50%;
+    padding: 2rem;
+    background: var(--color-white);
+}
+.postDetail-top{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.6rem;
+}
+.postDetail-buttons{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+.postDetail-image{
+    margin: 1 rem 0;
+    height: fit-content;
+    max-height: 26rem;
+    overflow: hidden;
+    margin-bottom: .7rem;
+}
+.postDetail-para p{
+    margin-bottom: .7rem;
+}
+
+/* ...................End PostDetails................. */
+
+
+/* =====================Start Sign Up Sign in==================== */
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+}
+input, select, textarea{
+    width: 100%;
+    padding: .7rem 1.1rem;
+    border-radius: var(--border-radius-1);
+    resize: none;
+}
+.form-message{
+    background: var(--color-danger);
+    color: var(--color-white);
+    font-size: .8rem;
+    padding: .8rem 1.1rem;
+    display: block;
+    margin-bottom: 1.1rem;
+    border-radius: var(--border-radius-1);
+}
+.form-container{
+    width: 50%;
+}
+.form-container h2{
+    margin-bottom: 2rem;
+    text-align: center;
+}
+.form-container small{
+    margin-top: 1.5rem;
+    display: block;
+}
+.form-container small a{
+    color: var(--color-primary);
+}
+/* =====================End Sign Up Sign in==================== */
+
+/* =====================Start Author==================== */
+.author-container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+
+}
+.author-avatar{
+    background: var(--color-white);
+    padding: 1rem;
+    border-radius: var(--border-radius-3);
+    display: flex;
+    gap: 1rem;
+    transition: var(--transition);
+    align-items: center;
+}
+.author-avatar:hover{
+    box-shadow: 0 1.5rem 2rem rgba(0 , 0, 0, 0.1);
+}
+.author-image{
+    width: 6rem;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--color-light);
+}
+.author-info{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+/* ================== End Author =================== */
+
+
+
+/* ================== Start Profile Area =================== */
+
+/* .profile-container .form{
+    width: 50%;
+} */
+.profile-container a {
+    display: block;
+    width: fit-content;
+    color: var(--color-primary);
+    font-size: 18px;
+    font-weight: 500;
+    margin: 1rem auto;
+    transition: var(--transition);
+    padding: .7rem 1.2rem;
+    border-radius: var(--border-radius-1);
+}
+.profile-container a:hover{
+    background: var(--color-primary);
+    color: var(--color-white);
+}
+.profile-details{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+    align-items: center;
+    margin: auto;
+}
+.profile-details .profile-data-form{
+    width: 100%;
+}
+
+.profile-wrapper{
+    position: relative;
+}
+.profile-image img{
+    width: 12rem;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    border: 4px solid var(--color-light);
+}
+.profile-image-form{
+    position: absolute;
+    background: var(--color-white);
+    width: fit-content;
+    right: 1;
+    font-size: 1.5rem;
+    bottom: 1rem;
+    padding: .1rem;
+    border-radius: .1rem;
+    display: flex;
+}
+.profile-image-form input{
+    display: none;
+}
+.profile-image-button{
+    position: absolute;
+    background: var(--color-white);
+    color: var(--color-primary);
+    width: fit-content;
+    right: 1rem;
+    font-size: 1.7rem;
+    bottom: 1rem;
+    padding: .1rem;
+    border-radius: 50%;
+    display: flex;
+}
+/* ================== End Profile Area =================== */
+/* ================== Start Dashboard =================== */
+.dashboard-container{
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+}
+.dashboard-post{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    background-color: var(--color-white);
+    padding: .7rem 1.3rem;
+    border-radius: var(--border-radius-3);
+}
+.dashboard-post-info{
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+.dashboard-post-image{
+    width: 5rem;
+    border-radius: var(--border-radius-2);
+    overflow: hidden;
+}
+.dashboard-posts-action{
+    display: flex;
+    gap: 1rem;
+}
+.dashboard-posts-action .btn-V{
+    background: var(--color-light);
+}
+.dashboard-posts-action .btn-V:hover{
+    background: var(--color-gray-900);
+}
+/* ================== End Dashboard =================== */
+
+/* ..............Start Error.................. */
+.error-center{
+    text-align: center;
+    padding-top: 6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ..............End Error .................. */
+
+/* ..............Quill CSS.................... */
+.ql-editor{
+    overflow: scroll;
+
+}
+
+/* ..............Start Footer.................. */
+footer{
+    background: var(--color-gray-900);
+    margin-top: 8rem;
+    padding-top: 6rem;
+}
+
+.footer-categories{
+    display: flex;
+    align-items: center;
+    gap: 2.4rem;
+    margin-bottom: 4rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.footer-categories li a{
+    color: var(--color-white);
+    background: var(--color-gray-700);
+    padding: .6rem  1.4rem;
+    border-radius: var(--border-radius-2);
+    transition: var(--transition);
+}
+
+.footer-categories li a:hover{
+    background: var(--color-white);
+    color: var(--color-gray-900);
+}
+.footer-copyright{
+    text-align: center;
+    padding: 1rem 0;
+    color: var(--color-white);
+    border-top: 1px solid var(--color-light);
+    font-weight: 300;
+}
+/* ..............End Footer.................. */
+
+/* ..............Start Media Screen.................. */
+/* .............. Media Screen - 1024px.................. */
+@media(max-width:1024px){
+    h1{
+        font-size: 1.8rem !important;
+    }
+    h2{
+        font-size: 1.4rem !important;
+    }
+
+    /* ............Nav ................*/
+    .nav-container {
+        position: relative;
+        height: 100%;
+    }
+    .nav-menu {
+        position: absolute;
+        top: 5rem;
+        display: flex;
+        gap: 0;
+        right: 0;
+        flex-direction: column;
+        perspective: 400px;
+
+    }
+    .nav-menu li {
+        width: 100%;
+        box-shadow: -2rem 4rem 4rem rgba(0, 0, 0, 0.26);
+        animation: NavAni forwards 400ms ease;
+        opacity: 0;
+        transform: rotateY(90deg);
+        transform-origin: top right;
+    }
+
+    /* ..............Nav Animation................ */
+    @keyframes NavAni {
+        to{
+            opacity: 1;
+            transform: rotateY(0);
+        }
+    }
+    .nav-menu li:nth-child(2){
+        animation-delay: 200ms;
+    }
+    .nav-menu li:nth-child(3){
+        animation-delay: 400ms;
+    }
+    .nav-menu li:nth-child(4){
+        animation-delay: 600ms;
+    }
+    .nav-menu li:nth-child(5){
+        animation-delay: 800ms;
+    }
+
+    .nav-menu li a {
+        display: block;
+        background: var(--color-primary);
+        padding: .4rem 4.2rem;
+    }
+    .nav-toggle-button{
+        display: inline-block;
+        font-size: 1.2rem;
+        cursor: pointer;
+    }
+    /* ..........Home........... */
+    .head-post-container{
+        gap: 2rem;
+    }
+    .head-post-container h1{
+        font-size: 2rem;
+    }
+    .post-container{
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+    /* ............Author's post........... */
+
+    .authorPosts-container{
+        gap: 2rem;
+    }
+    /* ............Categories post........... */
+    .categoryPosts-container{
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+    /* ..........PostDetalils........... */
+    .postDetail-container{
+        width: 70%;
+    }
+    /* ..........Author........... */
+    .author-container{
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+    /* ..........Form Container........... */
+    .form-container{
+        width: 70%;
+    }
+    /* ..........Dashboard Container........... */
+    .dashboard-post{
+        flex-direction: column;
+        align-items: flex-start;
+
+    }
+}
+/* .....................Media Screen - 600px........... */
+@media (max-width:600px) {
+    /* .............Home............. */
+    .head-post-container{
+        grid-template-columns: 1fe 1fr;
+    }
+    .head-post-container .post-image{
+        grid-row: 1;
+    }
+    .posts-container{
+        grid-template-columns: 1fr;
+    }
+    /* ............Author's post........... */
+
+    .authorPosts-container{
+        grid-template-columns: 1fr;
+    }
+    /* ............Categories post........... */
+    .categoryPosts-container{
+        grid-template-columns: 1fr;
+
+    }
+    /* ..........PostDetalils........... */
+    .postDetail-container{
+        width: 90%;
+        background: transparent;
+        padding: 0;
+    }
+    /* ..........Author........... */
+    .author-container{
+        grid-template-columns: 1fr;
+
+    }
+    /* ..........Form Container........... */
+    .form-container{
+        width: 90%;
+    }
+    /* ..........Dashboard Container........... */
+    .dashboard-post{
+        flex-direction: column;
+        align-items: flex-start;
+
+    }
+}
+
+/* ..............End Media Screen.................. */
+
+
